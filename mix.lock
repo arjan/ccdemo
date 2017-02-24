@@ -1,0 +1,2 @@
+%{"benchfella": {:hex, :benchfella, "0.3.4", "41d2c017b361ece5225b5ba2e3b30ae53578c57c6ebc434417b4f1c2c94cf4f3", [:mix], []},
+  "compiler_cache": {:hex, :compiler_cache, "1.1.0", "e2cc34d82ef32ab9dc51c805674d49e7bb400b0f7cd9615b6bb76d3125e7bcac", [:mix], []}}
