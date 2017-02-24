@@ -1,8 +1,7 @@
 defmodule CcdemoTest do
   use ExUnit.Case
 
-  alias Ccdemo.Template
-  import Ccdemo.Template, only: [render_direct: 2]
+  import Ccdemo.Template, only: [execute_naive: 2, execute: 2]
 
   test "template engine" do
     assert "foo  bas" == render("foo {bar} bas")
@@ -10,14 +9,12 @@ defmodule CcdemoTest do
   end
 
   defp render(tpl, vars \\ %{}) do
-    Template.execute(tpl, vars) |> IO.chardata_to_string
+    execute(tpl, vars) |> IO.chardata_to_string
   end
 
-
-  test "'direct mode' (unaccellerated)" do
-    assert "foo  bas" == render_direct("foo {bar} bas", %{})
-    assert "hello Arjan"= render_direct("hello {name}", %{name: "Arjan"})
+  test "'naive mode' (string operations)" do
+    assert "foo  bas" == execute_naive("foo {bar} bas", %{})
+    assert "hello Arjan"= execute_naive("hello {name}", %{name: "Arjan"})
   end
-
 
 end

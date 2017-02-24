@@ -21,7 +21,7 @@ defmodule TemplateBench do
   end
 
   bench "small template - string ops" do
-    Template.render_naive(@small_template, @small_vars)
+    Template.execute_naive(@small_template, @small_vars)
   end
 
   bench "small template - compiler cache" do
@@ -29,7 +29,7 @@ defmodule TemplateBench do
   end
 
   bench "large template - string ops" do
-    Template.render_naive(@large_template, @large_vars)
+    Template.execute_naive(@large_template, @large_vars)
   end
 
   bench "large template - compiler cache" do

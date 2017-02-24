@@ -26,7 +26,11 @@ defmodule Ccdemo.Template do
     {ast, []}
   end
 
-  def render_naive(template, vars) do
+  @doc """
+  Mimic the template engine by using string operations. Only used for
+  benchmarking purposes.
+  """
+  def execute_naive(template, vars) do
     rendered =
       Enum.reduce(vars, template, fn({var, value}, template) ->
         pattern = "{#{var}}"
